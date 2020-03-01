@@ -1,9 +1,27 @@
-import EscapeRatio from './EscapeRatio';
-import Line        from './Line';
+import Button      from './Button';
+import Count       from './Count';
+import Form        from './Form';
+import Item        from './Item';
 import Link        from './Link';
+import NextActions from './NextActions';
+import Question    from './Question';
 import Room        from './Room';
+import Text        from './Text';
 import TextBox     from './TextBox';
 import TimeLimit   from './TimeLimit';
 import Wrapper     from './Wrapper';
 
-export default { EscapeRatio, Line, Link, Room, TextBox, TimeLimit, Wrapper };
+export default {
+	Button,
+	Count,
+	Form,
+	Item,
+	Link,
+	NextActions,
+	Question,
+	Room,
+	Text,
+	TextBox,
+	TimeLimit,
+	Wrapper
+};

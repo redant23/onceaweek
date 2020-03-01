@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 
-  display:          flex;
-  align-items:      center;
-  justify-content:  center;
-  background-color: pink;
-  width:            100%;
+  flex: 1 0 auto;
+  width: 100%;
+  background: url(${({ coverUrl }) => coverUrl}) center no-repeat;
+  background-size: 150%;
 
 `;
 

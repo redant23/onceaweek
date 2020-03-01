@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { db }                         from '../Firebase';
 import Layout                         from 'components/Layout';
-import Rooms                          from 'components/Rooms';
+import Room                          from 'components/Room';
 
-const Room = () => {
+const PRoom = ({ match }) => {
 
-  const [rooms, setRooms] = useState(null)
+  const [room, setRoom] = useState(null)
 
-  const addTest = () => {
+  const updateData = () => {
 
   }
 
@@ -16,14 +16,19 @@ const Room = () => {
     db.collection('test2')
       .get()
       .then(querySnapshot => {
+
         const result = [];
+
         querySnapshot.forEach((doc) => {
           result.push(doc.data());
         });
 
-        setRooms(result[0].rooms);
-        console.log('result', result[0].rooms);
+        const target = result[0].rooms.find(room => room._id === match.params._id);
+
+        setRoom(target);
+
       });
+
     };
 
   useEffect(() => {
@@ -32,15 +37,15 @@ const Room = () => {
 
   }, []);
 
-  if (!rooms) return null;
+  if (!room) return null;
 
   return (
-      <div>
-
-          룸
-
-      </div>
+    <div>
+      <Layout noneHeader={true}>
+        <Room data={room}/>
+      </Layout>
+    </div>
   );
 };
 
-export default Room;
+export default PRoom;

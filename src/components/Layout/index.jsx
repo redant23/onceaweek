@@ -7,18 +7,20 @@ const Wrapper = styled.div`
 
 	display:        flex;
 	flex-direction: column;
+	position: absolute;
 	width:          100%;
-	height:         auto;
-	min-height:     100%;
+	height:         100%;
 
 `;
 
-const Layout = (props) => {
-
+const Layout = ({noneHeader, ...props}) => {
+	console.log('props', props);
 	return (
 		<Wrapper>
 
-			<Header />
+			{
+				!noneHeader && <Header />
+			}
 
 			<Main {...props}/>
 

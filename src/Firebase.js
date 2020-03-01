@@ -1,8 +1,14 @@
 import * as firebase                                                from "firebase/app";
-import { API_KEY, PROJECT_ID, MESSAGING_SENDER_ID, MEASUREMENT_ID } from "./fbPrivateInfo";
+import fbPrivateInfo from "./fbPrivateInfo";
 import "firebase/auth";
 import "firebase/firestore";
 
+const {
+  API_KEY,
+  PROJECT_ID,
+  MESSAGING_SENDER_ID,
+  MEASUREMENT_ID
+} = fbPrivateInfo;
 
 const config = {
   apiKey:            `${API_KEY}`,
